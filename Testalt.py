@@ -58,27 +58,27 @@ def color_positive_red(val):
         return f'color: {color}'
 
 col1, col2, col3 = st.columns([30, 30, 30])
-with col1:
-    st.subheader('Global Bonds')
-    data = openbb.economy.glbonds()
-    data[data.columns[1]] = data[data.columns[1]].apply(pd.to_numeric)
-    data[data.columns[2]] = data[data.columns[2]].apply(pd.to_numeric)
-    data[data.columns[3]] = data[data.columns[3]].apply(pd.to_numeric)
+# with col1:
+#     st.subheader('Global Bonds')
+#     data = openbb.economy.glbonds()
+#     data[data.columns[1]] = data[data.columns[1]].apply(pd.to_numeric)
+#     data[data.columns[2]] = data[data.columns[2]].apply(pd.to_numeric)
+#     data[data.columns[3]] = data[data.columns[3]].apply(pd.to_numeric)
 
-    columns = data.columns[3]
+#     columns = data.columns[3]
 
-    st.dataframe(data.style.applymap(color_positive_red, subset=[columns]))
+#     st.dataframe(data.style.applymap(color_positive_red, subset=[columns]))
 
 
-with col2:
-    st.subheader('US Bonds')
-    data = openbb.economy.usbonds()
-    data[data.columns[1]] = data[data.columns[1]].apply(pd.to_numeric)
-    data[data.columns[2]] = data[data.columns[2]].apply(pd.to_numeric)
-    data[data.columns[3]] = data[data.columns[3]].apply(pd.to_numeric)
+# with col2:
+#     st.subheader('US Bonds')
+#     data = openbb.economy.usbonds()
+#     data[data.columns[1]] = data[data.columns[1]].apply(pd.to_numeric)
+#     data[data.columns[2]] = data[data.columns[2]].apply(pd.to_numeric)
+#     data[data.columns[3]] = data[data.columns[3]].apply(pd.to_numeric)
 
-    columns = data.columns[3]
-    st.dataframe(data.style.applymap(color_positive_red, subset=[columns]))
+#     columns = data.columns[3]
+#     st.dataframe(data.style.applymap(color_positive_red, subset=[columns]))
 
 with col3:
     st.subheader('10y US Treasury Yield')
